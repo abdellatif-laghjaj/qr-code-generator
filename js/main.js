@@ -53,7 +53,7 @@ function showAlert(message, type) {
     let alert = `
         <div class="alert alert-${type} shadow-lg">
             <div>
-                ${type === 'success' ? '<ion-icon name="checkmark-circle-outline"></ion-icon>' : '<ion-icon name="close-circle-outline"></ion-icon>'}
+                ${type === 'success' ? '<ion-icon name="checkmark-circle-outline" class="text-2xl"></ion-icon>' : '<ion-icon name="close-circle-outline" class="text-2xl"></ion-icon>'}
                 <span>
                     ${message}
                 </span>
@@ -61,4 +61,9 @@ function showAlert(message, type) {
         </div>
     `;
     alert_container.innerHTML = alert;
+
+    //Remove alert after 3 seconds
+    setTimeout(function() {
+        alert_container.innerHTML = '';
+    }, 3000);
 }
