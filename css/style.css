@@ -30,6 +30,7 @@ body{
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     padding: 20px;
+    transition: all 0.3s ease-in-out;
 }
 
 .container header{
@@ -74,6 +75,7 @@ header p{
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     border-radius: 10px;
     padding: 20px;
+    transition: all 0.3s ease-in-out;
 }
 
 .qr-code img{

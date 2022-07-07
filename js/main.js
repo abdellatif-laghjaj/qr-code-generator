@@ -1,6 +1,7 @@
 const code_input = document.querySelector('.code-input');
 const generate_btn = document.querySelector('.generate-btn');
 const qrcode = document.querySelector('.qr-code');
+const alert_container = document.querySelector('.alert-container');
 
 //API
 const qrcode_size = 200;
@@ -11,7 +12,15 @@ generate_btn.addEventListener('click', function() {
     const code = code_input.value;
     if(code.length > 0) {
         generateQRcode(code);
-    }else {
+        showAlert('QR code generated successfully', 'success');
+    }else showAlert('Please enter text to generate QR code', 'error');
+});
+
+//Check if the user click enter key
+code_input.addEventListener('keyup', function(e) {
+    if(e.keyCode === 13 && code_input.value.length > 0) {
+        generateQRcode(code_input.value);
+    }else if(e.keyCode === 13 && code_input.value.length === 0) {
         alert('Please enter a code');
     }
 });
@@ -36,4 +45,20 @@ function getFirst10Characters(text) {
         return text.substring(0, 10);
     }
     return text;
+}
+
+
+//Show ALert Message
+function showAlert(message, type) {
+    let alert = `
+        <div class="alert alert-${type} shadow-lg">
+            <div>
+                ${type === 'success' ? '<ion-icon name="checkmark-circle-outline"></ion-icon>' : '<ion-icon name="close-circle-outline"></ion-icon>'}
+                <span>
+                    ${message}
+                </span>
+            </div>
+        </div>
+    `;
+    alert_container.innerHTML = alert;
 }
