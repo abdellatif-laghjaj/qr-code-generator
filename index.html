@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme_and_copyright.css">
+    <!-- Favicon -->
+    <link rel="icon" href="res/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.18.1/dist/full.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -12,6 +15,15 @@
     <title>Qr Code Generator | By Abdellatif Laghjaj</title>
 </head>
 <body>
+    <!-- Copyright -->
+    <div class="author-text">
+        <p>Made with ❤️
+            by <a href="https://github.com/abdellatif-laghjaj" target="_blank">
+                <b>Abdellatif Laghjaj</b>
+            </a>
+        </p>
+    </div>
+
     <div class="container">
         <header>
             <h1>Qr Code Generator</h1>
@@ -32,8 +44,31 @@
         </div>
     </div>
 
+    <!--Theme switcher-->
+    <div class="theme-switcher">
+        <div class="dropdown dropdown-left">
+            <label tabindex="0" class="btn m-1">
+                <ion-icon name="settings-outline" class="text-2xl"></ion-icon>
+            </label>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                <li class="theme-item" theme="cupcake"><a>cupcake</a></li>
+                <li class="theme-item" theme="dark"><a>dark</a></li>
+                <li class="theme-item" theme="light"><a>light</a></li>
+                <li class="theme-item" theme="bumblebee"><a>bumblebee</a></li>
+                <li class="theme-item" theme="synthwave"><a>synthwave</a></li>
+                <li class="theme-item" theme="halloween"><a>halloween</a></li>
+                <li class="theme-item" theme="fantasy"><a>fantasy</a></li>
+                <li class="theme-item" theme="dracula"><a>dracula</a></li>
+                <li class="theme-item" theme="aqua"><a>aqua</a></li>
+                <li class="theme-item" theme="luxury"><a>luxury</a></li>
+                <li class="theme-item" theme="night"><a>night</a></li>
+            </ul>
+        </div>
+    </div>
+
     <!-- JS -->
     <script src="js/filesaver.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/theme_switcher.js"></script>
 </body>
 </html>
