@@ -2,6 +2,7 @@ const code_input = document.querySelector('.code-input');
 const generate_btn = document.querySelector('.generate-btn');
 const qrcode = document.querySelector('.qr-code');
 const alert_container = document.querySelector('.alert-container');
+const save_btn = document.getElementById('save-btn');
 
 //API
 const qrcode_size = 200;
@@ -25,13 +26,11 @@ code_input.addEventListener('keyup', function(e) {
     }
 });
 
-
 // Generate QR code
 function generateQRcode(text) {
     let img = `<img src="${api_url}${text}" alt="QR code">`;
-    let title = getFirst10Characters(text);
     let download_btn = `
-        <button class="btn btn-primary download-btn">
+        <button class="btn btn-primary download-btn" id="save-btn" onclick="downloadQRcode('${text}')">
             <ion-icon name="arrow-down-outline" class="text-2xl py-3 text-white"></ion-icon>
         </button> `;
     let content = `${img}${download_btn}`;
@@ -66,4 +65,11 @@ function showAlert(message, type) {
     setTimeout(function() {
         alert_container.innerHTML = '';
     }, 3000);
+}
+
+//Download QR code
+function downloadQRcode(text) {
+    let img_src = `${api_url}${text}`;
+    let file_name = `${getFirst10Characters(text)}.png`;
+    saveAs(img_src, file_name);
 }
