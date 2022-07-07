@@ -31,9 +31,9 @@ function generateQRcode(text) {
     let img = `<img src="${api_url}${text}" alt="QR code">`;
     let title = getFirst10Characters(text);
     let download_btn = `
-        <a href="${api_url}${text}" download="${title}.png" class="btn btn-primary text-white text-xl download-btn">
-            <ion-icon name="arrow-down-outline"></ion-icon>
-        </a>`;
+        <button class="btn btn-primary btn-sm download-btn">
+            <i class="fas fa-download"></i>
+        </button> `;
     let content = `${img}${download_btn}`;
     qrcode.innerHTML = content;
 }
