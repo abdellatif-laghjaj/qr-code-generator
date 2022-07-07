@@ -21,7 +21,7 @@ code_input.addEventListener('keyup', function(e) {
     if(e.keyCode === 13 && code_input.value.length > 0) {
         generateQRcode(code_input.value);
     }else if(e.keyCode === 13 && code_input.value.length === 0) {
-        alert('Please enter a code');
+        showAlert('Please enter text to generate QR code', 'error');
     }
 });
 
@@ -31,8 +31,8 @@ function generateQRcode(text) {
     let img = `<img src="${api_url}${text}" alt="QR code">`;
     let title = getFirst10Characters(text);
     let download_btn = `
-        <button class="btn btn-primary btn-sm download-btn">
-            <i class="fas fa-download"></i>
+        <button class="btn btn-primary download-btn">
+            <ion-icon name="arrow-down-outline" class="text-2xl py-3 text-white"></ion-icon>
         </button> `;
     let content = `${img}${download_btn}`;
     qrcode.innerHTML = content;
