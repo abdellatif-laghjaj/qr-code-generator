@@ -87,3 +87,32 @@ header p{
     bottom: 16px;
     right: 16px;
 }
+
+
+/*Responsive*/
+@media only screen and (max-width: 526px) {
+    .container{
+        max-width: 96%;
+        min-width: 96%;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    header h1{
+        font-size: 20px;
+    }
+
+    header p{
+        font-size: 12px;
+    }
+
+    .qr-code img{
+        width: 150px;
+        margin-bottom: 54px;
+    }
+
+    .qr-code p{
+        font-size: 12px;
+    }
+}
+
