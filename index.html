@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="forest">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +7,25 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.18.1/dist/full.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
-
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <title>Qr Code Generator | By Abdellatif Laghjaj</title>
 </head>
 <body>
-    
+    <div class="container">
+        <header>
+            <h1>Qr Code Generator</h1>
+            <p>
+                Paste your text or URL and generate a QR code.
+            </p>
+        </header>
+        <div class="form">
+            <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs min-w-full mb-4"/>
+            <button class="btn btn-primary w-full mb-4">generate</button>
+        </div>
+        <div class="qr-code">
+            <img src="res/qr_code.png" alt="Qr Code" />
+        </div>
+    </div>
 </body>
 </html>
